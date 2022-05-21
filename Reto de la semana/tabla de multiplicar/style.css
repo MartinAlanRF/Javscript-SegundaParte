@@ -1,0 +1,92 @@
+body{
+    background-color: #b9b9b9 !important;
+}
+.formulario{
+    margin-top: 40px;
+}
+.tabla{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    width: 600px;
+}
+
+.labels{
+    text-align: justify;
+    font-size: 30px;
+}
+
+.buttonGenerate{
+    width: 100%;
+    margin-top: 20px;
+}
+
+/*Medidas de pantalla acomodando el contenido respecto a estas*/
+@media only screen and (max-width: 1200px) and (min-width: 980px) { 
+    .labels{
+        text-align: justify;
+        font-size: 30px;
+    }
+    .tabla{
+        width: 800px;
+    }
+}  
+
+
+/* Para 960px */  
+@media only screen and (max-width: 980px) and (min-width: 821px) {  
+    .labels{
+        text-align: justify;
+        font-size: 26px;
+    }
+    .tabla{
+        width: 600px;
+    }
+
+ }  
+   
+  
+ @media only screen and (max-width: 820px) and (min-width: 621px) {  
+    .labels{
+        text-align: justify;
+        font-size: 24px;
+    }
+    .tabla{
+        width: 500px;
+    }
+ }  
+   
+ 
+ @media only screen and (max-width: 620px) and (min-width: 501px) {  
+
+    .labels{
+        text-align: justify;
+        font-size: 22px;
+    }
+    .tabla{
+        width: 400px;
+    }
+ }  
+ 
+ 
+ /* Para 480px */  
+ @media only screen and (max-width: 500px) and (min-width: 341px) {  
+    .labels{
+        text-align: justify;
+        font-size: 20px;
+    }
+    .tabla{
+        width: 300px;
+    }
+ }  
+   
+ /* Para 320px */  
+ @media only screen and (max-width: 340px) and (min-width: 5px)  {  
+    .labels{
+        text-align: justify;
+        font-size: 20px;
+    }
+    .tabla{
+        width: 200px;
+    }
+ } 

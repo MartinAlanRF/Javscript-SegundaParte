@@ -1,0 +1,22 @@
+.figuras{
+    margin-top: 40px;
+}
+.titutloH1{
+    text-align: justify;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px;
+}
+.botones{
+    width: 100%;
+    margin-top: 20px;
+}
+.botones .botonArea{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.botones .botonPerimetro{
+    width: 100%;
+    margin-bottom: 10px;
+}

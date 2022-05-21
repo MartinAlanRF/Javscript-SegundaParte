@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio de DOM</title>
+  <!-- CSS only -->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <link href="./style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="titutloH1">Programa para calcular el área y perimetro de distintas figuras</h1>
+    <select onChange="formulario(this.value);" id="figurasSelect" class="form-select form-select-lg mb-3">
+      <option value="0">Selecciona la figura</option>
+      <option value="1">Cuadrado</option>
+      <option value="2">Rectangulo</option>
+      <option value="3">Triángulo</option>
+      <option value="4">Circulo</option>
+      <option value="5">Paralelograma</option>
+    </select>
+
+    <div id="cuadrado" class="mb-3" style="display: none;">
+      <div class="mb-3">
+        <label for="cuadroValue" class="form-label labels">¿Tamaño del lado en cm?</label>
+        <input type="text" class="form-control" id="cuadroValue">
+      </div>
+      <div>
+        <p id="respuesta"></p>
+        <p id="respuesta2"></p>
+      </div>
+      <div id="botones" class="botones">
+        <button type="button" class="botonArea btn btn-primary" onclick="areaSquare()">Área</button>
+        <button type="button" class="botonPerimetro btn btn-primary" onclick="perimetroSquare()">Perimetro</button>
+      </div>
+
+    </div>
+
+    <div id="rectangulo" class="mb-3" style="display: none;">
+      <div class="mb-3">
+        <label for="rectanguloValueBase" class="form-label labels">¿Tamaño de la base en cm?</label>
+        <input type="text" class="form-control" id="rectanguloValueBase">
+        <label for="rectanguloValueHeight" class="form-label labels">¿Tamaño de altura en cm?</label>
+        <input type="text" class="form-control" id="rectanguloValueHeight">
+      </div>
+      <div>
+        <p id="resultadoRectangulo"></p>
+        <p id="resultadoRectangulo2"></p>
+      </div>
+      <div id="botones" class="botones">
+        <button type="button" class="botonArea btn btn-primary" onclick="areaRectangle()">Área</button>
+        <button type="button" class="botonPerimetro btn btn-primary" onclick="perimetroRectangle()">Perimetro</button>
+      </div>
+
+    </div>
+
+    <div id="triangulo" class="mb-3" style="display: none;">
+      <select onChange="opcionesTriangulo(this.value);" id="trianguloSelect" class="form-select form-select-lg mb-3">
+        <option>¿Qué quieres calcular del triángulo?</option>
+        <option value="1">Area</option>
+        <option value="2">Perimetro</option>
+      </select>
+      <div class="mb-3">
+        <div id="areaTriangulo" class="areaTriangulo" style="display: none;">
+          <label for="exampleFormControlInput1" class="form-label labels">¿Tamaño de la base en cm?</label>
+          <input type="text" class="form-control" id="baseValue">
+          <label for="exampleFormControlInput1" class="form-label labels">¿Tamaño de altura en cm?</label>
+          <input type="text" class="form-control" id="heightValue">
+
+          <div>
+            <p id="resultadoTrianguloArea"></p>
+          </div>
+
+          <div id="botones" class="botones">
+            <button type="button" class="botonArea btn btn-primary" onclick="areaTriangulo()">Área</button>
+          </div>
+        </div>
+
+        <div id="perimetroTriangulo" class="" style="display: none;">
+          <label for="exampleFormControlInput1" class="form-label labels">¿Tamaño de la base en cm?</label>
+          <input type="text" class="form-control" id="ladoOne">
+          <label for="exampleFormControlInput1" class="form-label labels">¿Tamaño de altura en cm?</label>
+          <input type="text" class="form-control" id="ladoTwo">
+          <label for="exampleFormControlInput1" class="form-label labels">¿Tamaño de altura en cm?</label>
+          <input type="text" class="form-control" id="ladoThree">
+        </div>
+
+        <div>
+          <p id="resultadoTrianguloPerimetro"></p>
+        </div>
+
+        <div id="botones" class="botones">
+          <button type="button" class="botonPerimetro btn btn-primary" onclick="perimetroTriangulo()">Perimetro</button>
+        </div>
+
+      </div>
+      <div>
+      </div>
+    </div>
+
+    <div id="circulo" class="mb-3" style="display: none;">
+      <div class="mb-3">
+        <label for="circuloValue" class="form-label labels">¿Tamaño del radio en cm?</label>
+        <input type="text" class="form-control" id="radio">
+      </div>
+      <div>
+        <p id="resultadoAreaCirculo"></p>
+        <p id="resultadoPerimetroCirculo"></p>
+      </div>
+      <div id="botones" class="botones">
+        <button type="button" class="botonArea btn btn-primary" onclick="areaCirculo()">Área</button>
+        <button type="button" class="botonPerimetro btn btn-primary" onclick="perimetroCirculo()">Perimetro</button>
+      </div>
+
+    </div>
+
+    <div id="paralelogramo" class="mb-3" style="display: none;">
+      <select onChange="opcionesParalelogramo(this.value);" id="paralelogramoSelect"
+        class="form-select form-select-lg mb-3">
+        <option>¿Qué quieres calcular del triángulo?</option>
+        <option value="1">Area</option>
+        <option value="2">Perimetro</option>
+      </select>
+      <div class="mb-3" id="areaParalelogramo" style="display: none;">
+        <label for="parelelogramoValueBase" class="form-label labels">¿Tamaño de la base en cm?</label>
+        <input type="text" class="form-control" id="parelelogramoValueBase">
+        <label for="parelelogramoValueHeight" class="form-label labels">¿Tamaño de altura en cm?</label>
+        <input type="text" class="form-control" id="parelelogramoValueHeight">
+
+        <div id="resultadoAreaParalelogramo">
+        </div>
+
+        <div  id="botones" class="botones">
+          <button  type="button" class="botonArea btn btn-primary" onclick="areaParalelogramo()">Área</button>
+        </div>
+      </div>
+
+      <div class="mb-3" id="perimetroParalelogramo" style="display: none;">
+        <label for="parelelogramoValueBase" class="form-label labels">¿Tamaño de la base en cm?</label>
+        <input type="text" class="form-control" id="parelelogramoValueBaseDos">
+        <label for="parelelogramoValueSide" class="form-label labels">¿Tamaño de uno de sus lados en cm?</label>
+        <input type="text" class="form-control" id="parelelogramoValueSide">
+
+        <div id="resultadoPerimetroParalelogramo">
+          
+        </div>
+
+        <div  id="botones" class="botones">
+          <button  type="button" class="botonArea btn btn-primary" onclick="perimetroParalelogramo()">Área</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script type="text/javascript" src="./figuras.js"></script>
+</body>
+
+</html>
