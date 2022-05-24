@@ -1,9 +1,11 @@
 const tabla = () => {
     const containerTable = document.getElementById('tablaGenerada');
-    const numMulti = document.getElementById('tablaMultiplicar').value;
-    const inicio = document.getElementById('inicio').value;
-    const final = document.getElementById('final').value;
-
+    let numMulti = document.getElementById('tablaMultiplicar').value;
+    let inicio = document.getElementById('inicio').value;
+    let final = document.getElementById('final').value;
+    numMulti = Number(numMulti);
+    inicio = Number(inicio);
+    final =Number(final);
     if ((inicio > 0 && final > 0) || (inicio === null && final === null && numMulti === null)) {
         if (inicio < final) {
             //Primero creo la tabla
