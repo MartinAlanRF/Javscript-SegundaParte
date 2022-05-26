@@ -3,6 +3,7 @@ const tabla = () => {
     let numMulti = document.getElementById('tablaMultiplicar').value;
     let inicio = document.getElementById('inicio').value;
     let final = document.getElementById('final').value;
+    
     numMulti = Number(numMulti);
     inicio = Number(inicio);
     final =Number(final);
@@ -37,7 +38,6 @@ const tabla = () => {
             const elementTbody = document.createElement('tbody');
             // Y esta misma etiqueta la coloco como hijo de table
             elementTable.appendChild(elementTbody);
-
             for (let i = inicio; i <= final; i++) {
                 //Se crea la etiqueta de cada fila
                 const elementTableBodyTr = document.createElement('tr');

@@ -10,7 +10,6 @@ const tablaMultiplicar = ()=>{
         tabla.appendChild(tablaMulti);
         //Le agregos clases de boostrap v5
         tablaMulti.className ="table table-dark table-striped table-hover";
-
         // Se modifica el css de cada tabla para que se responsivo haciendo uso de style en js y del style desde css 
         tablaMulti.style.width = '300px';
         tablaMulti.style.margin = 'auto';
